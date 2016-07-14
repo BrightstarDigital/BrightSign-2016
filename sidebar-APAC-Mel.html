@@ -43,7 +43,7 @@
       <div class="clock">
       	<span id="time"></span>
             <span class="ampm"></span>
-		
+		 
             <div id="date"></div>         
       </div>
    </div>
@@ -58,8 +58,10 @@
       </div>
 <script src="time/moment.js"></script> 
 
+
+
 <script>
-var date = moment().format("DD MMMM YYYY");
+var date = moment().format("DD MMMM YYYY"); <!-- EU Time Format -->
 var time = moment().format("h:mm");
 var ampm = moment().format("a");
 
