@@ -1,0 +1,175 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	padding: 0;
+	margin: 0;
+}
+.sidebar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 299px;
+	overflow:hidden;
+	
+	
+	height: 909px;
+	font-family: 'UniversLTPro-55Roman';
+	overflow: hidden;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f5f5f5+0,fefefe+100 */
+
+
+
+
+	
+}
+/** WEATHER **/
+
+		/* style the container however you please */
+#weather {
+	color: #4e4e56;
+	padding: 12px;
+
+	padding-top: 40px;
+	padding-left:40px;
+	padding-right:40px;
+	padding-bottom: 40px;
+	
+}
+.wiDay {
+	display: none;
+}
+.flatWeatherPlugin ul.wiForecasts {
+	margin-top: 32px;
+}
+#weather > div > h2 {
+	margin: 0 0 5px 0;
+	font-family: 'UniversLTPro-55Roman';
+}
+.flatWeatherPlugin ul.wiForecasts li > span {
+	width: 25%;
+	display: inline-block;
+	font-family: 'UniversLTPro-55Roman';
+}
+/* styling for this page only, ignore */
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'UniversLTPro-55Roman';
+}
+p {
+	color: #888;
+	width: 340px;
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'UniversLTPro-55Roman';
+}
+/***/
+			
+.clock {
+	width: 280px;
+	color: #4e4e56;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	
+	
+
+	text-align: center;
+	font-family: 'UniversLTPro-55Roman' !important;
+}
+#date {
+	font-weight: bold;
+	font-size: 22px;
+	font-family: 'UniversLTPro-55Roman' !important;
+}
+#time {
+	font-weight: bold;
+	font-size: 60px;
+	font-family: 'UniversLTPro-55Roman' !important;
+}
+span.ampm {
+	font-weight: bold;
+	font-size: 30px !important;
+}
+/***/
+
+#logo {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background:#f7403a;
+	border-bottom:solid 7px #fb9b97;
+	
+	margin:0 atuo;
+}
+#logo img {
+	    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+#story {
+	background: #4e4e56;
+	
+}
+#story img {
+	width: 299px;
+	margin: 0 auto;
+}
+#story h3 {
+	font-size: 19px;
+	color: #fff;
+	text-align: center;
+	padding-top: 24px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-bottom: 30px;
+}
+#spot {
+	padding-top: 15px;
+	background:#ffffff;
+	padding-bottom:10px;
+}
+#spot img {
+	width: 153px;
+	margin: 0 auto 0 auto;
+	display: block;
+}
+#events {
+	background:#eaeaea;
+	height:186px;
+	color:#4e4e56;
+}
+#events .inside {
+	padding:12px;
+}
+#events h3 {
+	text-transform:uppercase;
+	padding-bottom:8px;
+	font-weight: bold;
+}
+#events ul {
+	margin-top:10px;
+	display:block;
+}
+#events li {
+	list-style:none;
+	padding-top:12px;
+	padding-bottom:12px;
+}
+#events span.ev-date {
+	background:#fff;
+	font-size:12px;
+	padding:6px;
+	color:#f7403a;
+	padding-top:8px;
+	border-radius:3px;
+}
+#events span.ev-name {
+	padding-left:10px;
+}
+.box {
+	background:url(../images/box-bg.gif);
+	background-repeat:repeat-x;
+	background-color:#f9f9f9;
+	background-position:bottom;
+
+}

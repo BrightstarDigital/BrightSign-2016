@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>Sidebar –  US –  Canada</title>
+
+		<!-- include flatWeatherPlugin.css -->
+		<link href="weather/css/flatWeatherPlugin.css" rel="stylesheet">
+		<!-- include a copy of jquery (if you haven't already) -->
+		<script src="weather/js/jquery-2.1.1.min.js"></script>
+		<!-- include flatWeatherPlugin.js -->
+		<script src="weather/js/jquery.flatWeatherPlugin.js"></script>
+		<link href="font.css" type="text/css" rel="stylesheet">
+		<link href="css/sidebar.css" type="text/css" rel="stylesheet">
+		<script type="text/javascript">
+		$(document).ready(function() {
+
+			//Setup the plugin, see readme for more examples
+			var example = $("#weather").flatWeatherPlugin({
+			  location: "Providence, RI", //city and region *required 
+			  country: "USA",         //country *required 
+			  //optional:
+			  api: "yahoo", //default: openweathermap (openweathermap or yahoo)
+			  //apikey: "your-api-key",   //optional api key for openweather
+			  view : "simple", //default: full (partial, full, simple, today or forecast)
+			  displayCityNameOnly : true, //default: false (true/false) if you want to display only city name
+			  forecast: 4, //default: 5 (0 -5) how many days you want forecast
+			  render: true, //default: true (true/false) if you want plugin to generate markup
+			  loadingAnimation: true, //default: true (true/false) if you want plugin to show loading animation
+			  units : "imperial"
+			});
+
+		});
+		</script>
+		</head>
+
+<body>
+<div class="sidebar">
+	<div id="logo"><img src="images/logo-w.png"  alt=""/></div>
+	
+      <div class="box">
+      
+      <div class="clock">
+      	<span id="time"></span>
+            <span class="ampm"></span>
+		
+            <div id="date"></div>         
+      </div>
+   </div>
+   
+   <div class="box">
+      <div id="weather"></div>
+   </div>
+	
+      <div id="spot">
+      	<img src="images/spot.png" width="153" height="100" alt=""/></div>
+            
+            <iframe src="http://tv.brightstarus.com/slider-sm" height="250" width="300" frameborder="0" scrolling="no"></iframe>
+</div>
+<script src="time/moment.js"></script> 
+
+<script>
+var date = moment().format('MMMM DD, YYYY');
+var time = moment().format("h:mm");
+var ampm = moment().format("a");
+
+$('#date').append(date);
+$('#time').append(time);
+$('span.ampm').append(ampm);
+
+function update() {
+  $('#time').html(moment().format('h:mm'));
+
+}
+function updateDate() {
+ 
+  $('#date').html(moment().format('MMMM DD, YYYY'));
+}
+function updateAmpm() {
+ 
+  $('span.ampm').html(moment().format('a'));
+}
+setInterval(updateDate, 300000); /* Checks Date */
+setInterval(updateAmpm, 300000); /* Checks Date */
+setInterval(update, 1000); /* Displays System Time */
+
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+		<head>
+		<meta charset="UTF-8">
+		<title>Untitled Document</title>
+
+		<!-- include flatWeatherPlugin.css -->
+		<link href="weather/css/flatWeatherPlugin.css" rel="stylesheet">
+		<!-- include a copy of jquery (if you haven't already) -->
+		<script src="weather/js/jquery-2.1.1.min.js"></script>
+		<!-- include flatWeatherPlugin.js -->
+		<script src="weather/js/jquery.flatWeatherPlugin.min.js"></script>
+		<style>
+* {
+	padding: 0;
+	margin: 0;
+}
+.sidebar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 280px;
+	padding-left: 10px;
+	padding-right: 10px;
+	height: 911px;
+	
+	overflow: hidden;
+}
+/** WEATHER **/
+
+		/* style the container however you please */
+#weather {
+	color: #4e4e56;
+	padding-top: 80px;
+}
+.wiDay {
+	display: none;
+}
+.flatWeatherPlugin ul.wiForecasts {
+	margin-top: 32px;
+}
+/* styling for this page only, ignore */
+body {
+	font-family: sans-serif;
+	padding: 0;
+	margin: 0;
+	background: #ffffff;
+}
+p {
+	color: #888;
+	width: 340px;
+	margin: 0 auto;
+	text-align: center;
+}
+/***/
+			
+.clock {
+	width: 280px;
+	color: #f7403a;
+	background-color: #fefefe;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	border-top: solid 4px #f7f7f7;
+	border-bottom: solid 4px #f7f7f7;
+	text-align: center;
+}
+#date {
+	font-weight: bold;
+	font-size: 22px;
+}
+#time {
+	font-weight: bold;
+	font-size: 72px;
+}
+span.ampm {
+	font-weight: bold;
+	font-size: 30px !important;
+}
+/***/
+
+#logo {
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+</style>
+		<script type="text/javascript">
+		$(document).ready(function() {
+
+			//Setup the plugin, see readme for more examples
+			var example = $("#weather").flatWeatherPlugin({
+			  location: "Miami", //city and region *required 
+			  country: "USA",         //country *required 
+			  //optional:
+			  api: "yahoo", //default: openweathermap (openweathermap or yahoo)
+			  //apikey: "your-api-key",   //optional api key for openweather
+			  view : "partial", //default: full (partial, full, simple, today or forecast)
+			  displayCityNameOnly : true, //default: false (true/false) if you want to display only city name
+			  forecast: 4, //default: 5 (0 -5) how many days you want forecast
+			  render: true, //default: true (true/false) if you want plugin to generate markup
+			  loadingAnimation: true, //default: true (true/false) if you want plugin to show loading animation
+			  units : "imperial"
+			});
+
+		});
+		</script>
+		</head>
+
+		<body>
+<div class="sidebar">
+          <div id="logo"><img src="images/logo.png" width="280" height="73" alt=""/></div>
+          <div class="clock">
+    <div id="date"></div>
+    <span id="time"></span> <span class="ampm"></span> </div>
+          <div id="weather"></div>
+        </div>
+<script src="time/moment.js"></script> 
+<script>
+    
+
+var date = moment().format("dddd, MMMM Do");
+var time = moment().format("h:mm");
+var ampm = moment().format("a");
+
+$('#date').append(date);
+$('#time').append(time);
+$('span.ampm').append(ampm);
+
+function update() {
+  $('#time').html(moment().format('h:mm'));
+
+}
+function updateDate() {
+ 
+  $('#date').html(moment().format('dddd, MMMM Do'));
+}
+function updateAmpm() {
+ 
+  $('span.ampm').html(moment().format('a'));
+}
+setInterval(updateDate, 300000); /* Checks Date */
+setInterval(updateAmpm, 300000); /* Checks Date */
+setInterval(update, 1000); /* Displays System Time */
+
+</script>
+</body>
+</html>

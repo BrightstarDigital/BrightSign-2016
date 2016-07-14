@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IDEABOX Elegant Forms</title>
+
+
+<link rel="stylesheet" type="text/css" href="css/breakingNews.css">
+
+<script src="js/jQuery.js"></script>
+<script src="js/breakingNews.js"></script>
+
+<link href="../font.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<style>
+	
+</style>
+<body>
+
+
+
+<div style="width:1920px; height:269px; position:absolute; top:0; left:0; overflow:hidden;">
+
+<div class="title-bar">Latest News</div>
+
+	<div class="breakingNews" id="bn1">
+   
+        <ul>
+        	
+        </ul>
+        <div class="bn-navi">
+        	<span></span>
+            <span></span>
+        </div>
+    </div>
+
+</div>
+
+<script>
+	$(window).load(function(e) {
+        $("#bn1").breakingNews({
+			effect		:"slide-h",
+			autoplay	:true,
+			timer		:6000,
+			color		:"green",
+			feed		:"http://rss.cnn.com/rss/cnn_topstories.rss,http://www.miamiherald.com/news/local/?widgetName=rssfeed&widgetContentId=712015&getXmlFeed=true,http://www.brightstar.com/site/press,http://sports.espn.go.com/espn/rss/news,http://feeds.webservice.techradar.com/us/rss/news/phone-and-communications",
+			feedlabels	:"CNN Top Stories,South Florida News,Brightstar News,ESPN News,Mobile News",
+			feedcount	:8	
+		});
+    });
+</script>
+
+</body>
+</html>
