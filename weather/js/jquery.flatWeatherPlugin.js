@@ -104,6 +104,7 @@
 					parameters.q = location;
 					parameters.units = this.settings.units;
 					if(this.settings.apikey) parameters.appid = this.settings.apikey;
+					parameters.lang = "sp";  
 
 					params.push(parameters); //params for first request url
 					
@@ -124,7 +125,7 @@
 					parameters.env = "store://datatables.org/alltableswithkeys"; //some sort of api version info... because yahoo.
 					parameters.format = "json";
 					params.push(parameters);
-
+	
 				}
 
 
